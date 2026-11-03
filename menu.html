@@ -1,28 +1,43 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Set the character encoding and responsive page settings. -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Provide search engines with information about the menu page. -->
     <meta name="description" content="Browse the Mush Cafe menu featuring kotas, burgers, chips, combo meals, and grilled chicken favourites in Randburg.">
     <meta name="keywords" content="Mush Cafe menu, Randburg food menu, kotas, burgers, chicken and chips, combo meals">
     <meta name="robots" content="index, follow">
+
+    <!-- Define the title and description displayed when the page is shared on social media. -->
     <meta property="og:title" content="Mush Cafe Menu | Local Favourites and Meals">
     <meta property="og:description" content="Explore the favourite menu items, prices, and tasty meals served at Mush Cafe.">
     <meta property="og:type" content="website">
+
+    <!-- Set the browser tab title and link the external stylesheet. -->
     <title>Mush Cafe | Menu</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <!-- Site header and navigation -->
+
+    <!-- HEADER: Displays the cafe logo and links to the main website pages. -->
     <header class="site-header">
         <div class="container nav-container">
+
+            <!-- Logo links customers back to the home page. -->
             <a href="index.html" class="logo" aria-label="Mush Cafe home page">
                 <img src="images/Logo.jpg" alt="Mush Cafe logo">
                 <span>Mush Cafe</span>
             </a>
 
-            <!-- Main navigation -->
-            <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false"><span></span></button>
+            <!-- NAVIGATION: Provides access to the website's five main pages. -->
+            <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span>
+            </button>
+
             <nav class="main-nav" aria-label="Main navigation">
                 <a href="index.html">Home</a>
                 <a href="menu.html" class="active">Menu</a>
@@ -33,8 +48,11 @@
         </div>
     </header>
 
+
+    <!-- MAIN CONTENT: Contains the menu introduction, video preview and food items. -->
     <main>
-        <!-- Menu page hero -->
+
+        <!-- PAGE INTRODUCTION: Introduces customers to the Mush Cafe menu. -->
         <section class="page-hero" aria-labelledby="menu-heading">
             <div class="container">
                 <p class="eyebrow">Fresh favourites</p>
@@ -43,7 +61,8 @@
             </div>
         </section>
 
-        <!-- Featured TikTok preview -->
+
+        <!-- SOCIAL MEDIA SECTION: Provides a link to the cafe's latest TikTok content. -->
         <section class="section video-section" aria-labelledby="menu-video-heading">
             <div class="container">
                 <div class="section-heading center">
@@ -51,6 +70,7 @@
                     <h2 id="menu-video-heading">Watch our latest TikTok</h2>
                 </div>
 
+                <!-- Clickable preview that takes visitors to the cafe's TikTok video. -->
                 <div class="tiktok-card">
                     <a href="https://www.tiktok.com/@mushcafe01/video/7188620674829782277/@mushcafe01" target="_blank" rel="noopener noreferrer" aria-label="Open Mush Cafe TikTok profile">
                         <img src="images/llogo.jpeg" alt="Mush Cafe food preview" loading="lazy">
@@ -63,24 +83,35 @@
             </div>
         </section>
 
-        <!-- Menu item grid -->
+
+        <!-- MENU SECTION: Displays food products with search, category filters and price sorting. -->
         <section class="section" aria-labelledby="menu-list-heading">
             <div class="container">
+
+                <!-- Heading introduces the food items available to customers. -->
                 <div class="section-heading center">
                     <p class="eyebrow">Popular picks</p>
                     <h2 id="menu-list-heading">Made to satisfy every appetite</h2>
                 </div>
+
+                <!-- MENU CONTROLS: Allow visitors to search, filter and sort menu items. -->
                 <div class="menu-toolbar">
+
+                    <!-- Search field allows customers to find specific food items. -->
                     <div class="menu-search">
                         <label class="sr-only" for="menuSearch" style="position:absolute;left:-9999px;">Search menu items</label>
                         <input type="text" id="menuSearch" placeholder="Search for food..." aria-label="Search menu items">
                     </div>
+
+                    <!-- Category buttons filter food items by their type. -->
                     <div class="menu-filters" aria-label="Filter menu by category">
                         <button class="filter-btn active" type="button" data-category="all">All</button>
                         <button class="filter-btn" type="button" data-category="kotas">Kotas</button>
                         <button class="filter-btn" type="button" data-category="burgers">Burgers</button>
                         <button class="filter-btn" type="button" data-category="chicken">Chicken</button>
                     </div>
+
+                    <!-- Sorting dropdown arranges menu items according to their prices. -->
                     <div class="menu-sort">
                         <label for="menuSort" class="sr-only" style="position:absolute;left:-9999px;">Sort menu items</label>
                         <select id="menuSort" aria-label="Sort menu by price">
@@ -90,8 +121,16 @@
                         </select>
                     </div>
                 </div>
-                <div id="menuNoResults" class="menu-empty" hidden>No menu items match your search or filter. Try another option.</div>
+
+                <!-- This message appears when no menu items match the search or selected category. -->
+                <div id="menuNoResults" class="menu-empty" hidden>
+                    No menu items match your search or filter. Try another option.
+                </div>
+
+                <!-- MENU PRODUCT GRID: Each article represents an individual food item. -->
                 <div class="menu-grid">
+
+                    <!-- Product 1: Russian and Viana Kota. -->
                     <article class="menu-card" data-category="kotas">
                         <div class="menu-card-image">
                             <img src="images/Kota.jpeg" alt="Russian Kota meal served with chips and sauce" loading="lazy" class="gallery-image">
@@ -102,7 +141,8 @@
                             <span class="price">R65,00</span>
                         </div>
                     </article>
-                    
+
+                    <!-- Product 2: Russian Kota. -->
                     <article class="menu-card" data-category="kotas">
                         <div class="menu-card-image">
                             <img src="images/Russian Kota.jpeg" alt="Russian Kota meal served with chips and sauce" loading="lazy" class="gallery-image">
@@ -114,6 +154,7 @@
                         </div>
                     </article>
 
+                    <!-- Product 3: Quarter chicken served with chips. -->
                     <article class="menu-card" data-category="chicken">
                         <div class="menu-card-image">
                             <img src="images/Chicken (1.4) and Chips.jpeg" alt="Chicken (1/4) and chips meal" loading="lazy" class="gallery-image">
@@ -125,6 +166,7 @@
                         </div>
                     </article>
 
+                    <!-- Product 4: Full chicken served with chips. -->
                     <article class="menu-card" data-category="chicken">
                         <div class="menu-card-image">
                             <img src="images/Chicken (full) and chips.jpeg" alt="Chicken (Full) and chips meal" loading="lazy" class="gallery-image">
@@ -135,6 +177,8 @@
                             <span class="price">R195,00</span>
                         </div>
                     </article>
+
+                    <!-- Product 5: Half chicken served with chips. -->
                     <article class="menu-card" data-category="chicken">
                         <div class="menu-card-image">
                             <img src="images/Chicken (half) and chips.jpeg" alt="Chicken (1/2) and chips meal" loading="lazy" class="gallery-image">
@@ -145,6 +189,8 @@
                             <span class="price">R117,00</span>
                         </div>
                     </article>
+
+                    <!-- Product 6: Rib burger served with chips. -->
                     <article class="menu-card" data-category="burgers">
                         <div class="menu-card-image">
                             <img src="images/Burger and chips.jpeg" alt="Burger and chips meal" loading="lazy" class="gallery-image">
@@ -156,6 +202,7 @@
                         </div>
                     </article>
 
+                    <!-- Product 7: Full chicken without chips. -->
                     <article class="menu-card" data-category="chicken">
                         <div class="menu-card-image">
                             <img src="images/Full chicken.jpeg" alt="Full chicken meal" loading="lazy" class="gallery-image">
@@ -167,6 +214,7 @@
                         </div>
                     </article>
 
+                    <!-- Product 8: Beef patty and Russian Kota. -->
                     <article class="menu-card" data-category="burgers">
                         <div class="menu-card-image">
                             <img src="images/Rib.jpeg" alt="Rib burger meal" loading="lazy" class="gallery-image">
@@ -178,6 +226,7 @@
                         </div>
                     </article>
 
+                    <!-- Product 9: Russian and chips combination. -->
                     <article class="menu-card" data-category="kotas">
                         <div class="menu-card-image">
                             <img src="images/chips and russian.jpeg" alt="Russian Kota and chips combo meal" loading="lazy" class="gallery-image">
@@ -189,6 +238,7 @@
                         </div>
                     </article>
 
+                    <!-- Product 10: Combination meal with chips and fried chicken. -->
                     <article class="menu-card" data-category="kotas">
                         <div class="menu-card-image">
                             <img src="images/Combo.jpeg" alt="Combo meal with chips and fried chicken" loading="lazy" class="gallery-image">
@@ -199,19 +249,24 @@
                             <span class="price">R85,00</span>
                         </div>
                     </article>
+
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Site footer -->
+
+    <!-- FOOTER: Displays the cafe slogan, page links and copyright information. -->
     <footer class="site-footer">
         <div class="container footer-content">
+
+            <!-- Cafe name and slogan. -->
             <div>
                 <h3>Mush Cafe</h3>
                 <p>Good food. Good moments.</p>
             </div>
 
+            <!-- Footer navigation provides another way to access the website pages. -->
             <div class="footer-links" aria-label="Footer navigation">
                 <a href="index.html">Home</a>
                 <a href="menu.html">Menu</a>
@@ -221,10 +276,13 @@
             </div>
         </div>
 
+        <!-- Copyright notice for the website. -->
         <div class="container copyright">
             <p>&copy; 2026 Mush Cafe. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- Load the JavaScript file that controls the website's interactive features. -->
     <script src="js/script.js"></script>
 </body>
 </html>
