@@ -3,8 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contact Mush Cafe for enquiries, orders, or more information about our menu and services.">
-    <title>Mush Cafe | Contact</title>
+    <meta name="description" content="Contact Mush Cafe in Randburg for orders, questions, and feedback about our local meals and services.">
+    <meta name="keywords" content="Mush Cafe contact, Randburg café, order enquiry, grilled chicken, local food contact">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Contact Mush Cafe | Randburg">
+    <meta property="og:description" content="Get in touch with Mush Cafe for orders, questions, and menu enquiries.">
+    <meta property="og:type" content="website">
+    <title>Contact Mush Cafe | Randburg</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -17,6 +22,7 @@
             </a>
 
             <!-- Main navigation -->
+            <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false"><span></span></button>
             <nav class="main-nav" aria-label="Main navigation">
                 <a href="index.html">Home</a>
                 <a href="menu.html">Menu</a>
@@ -82,19 +88,69 @@
                     <a href="https://www.tiktok.com/@mushcafe01" class="button social-button tiktok-button" target="_blank" rel="noopener noreferrer">TikTok</a>
                 </div>
             </div>
-             <div class="map-wrapper">
-                <iframe
-                    class="map-frame"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3580.282345934955!2d27.90166197622571!3d-26.187492063295107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e95a08b041a97bb%3A0x251e9ee63250a967!2sBlue%20Gum%20St%2C%20Vogelstruisfontein%2C%20Randburg!5e0!3m2!1sen!2sza!4v1789759092368!5m2!1sen!2sza"
-                    width="600"
-                    height="450"
-                    style="border:0;"
-                    allowfullscreen=""
-                    loading="lazy"
-                    referrerpolicy="strict-origin-when-cross-origin"
-                    title="Mush Cafe location map">
-                </iframe>
-            </div>   
+        </section>
+
+        <section class="section" aria-labelledby="contact-form-heading">
+            <div class="container">
+                <div class="section-heading center">
+                    <p class="eyebrow">Send a message</p>
+                    <h2 id="contact-form-heading">Contact form</h2>
+                </div>
+
+                <div class="enquiry-wrapper">
+                    <form id="contactForm" class="enquiry-form" novalidate>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="contactName">Full name</label>
+                                <input id="contactName" name="contactName" type="text" placeholder="Enter your full name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contactPhone">Phone number</label>
+                                <input id="contactPhone" name="contactPhone" type="tel" placeholder="Enter your contact number" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="contactEmail">Email address</label>
+                                <input id="contactEmail" name="contactEmail" type="email" placeholder="Enter your email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="messageType">Message type</label>
+                                <select id="messageType" name="messageType" required>
+                                    <option value="">Select an option</option>
+                                    <option value="General enquiry">General enquiry</option>
+                                    <option value="Order enquiry">Order enquiry</option>
+                                    <option value="Feedback">Feedback</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contactMessage">Message</label>
+                            <textarea id="contactMessage" name="contactMessage" placeholder="Tell us how we can help..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="button primary-button">Send Message</button>
+                        <div id="contactFormStatus" class="form-status" aria-live="polite"></div>
+                    </form>
+                </div>
+
+                <div class="map-wrapper">
+                    <iframe
+                        class="map-frame"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3580.282345934955!2d27.90166197622571!3d-26.187492063295107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e95a08b041a97bb%3A0x251e9ee63250a967!2sBlue%20Gum%20St%2C%20Vogelstruisfontein%2C%20Randburg!5e0!3m2!1sen!2sza!4v1789759092368!5m2!1sen!2sza"
+                        width="600"
+                        height="450"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        title="Mush Cafe location map">
+                    </iframe>
+                </div>
+            </div>
         </section>
     </main>
 
@@ -119,5 +175,6 @@
             <p>&copy; 2026 Mush Cafe. All rights reserved.</p>
         </div>
     </footer>
+    <script src="js/script.js"></script>
 </body>
 </html>

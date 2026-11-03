@@ -1,22 +1,24 @@
 # Sitemap
 
 - Home (`index.html`)
-  - Overview of Mush Cafe
-  - Services and calls to action
+  - Hero section and brand introduction
+  - Service cards
+  - About preview and call to action
 
 - Menu (`menu.html`)
-  - Signature dishes
-  - Pricing and food images
+  - Menu search and category filters
+  - Price sorting controls
+  - Food cards with prices and gallery lightbox
 
 - About (`about.html`)
-  - Story
-  - Mission
-  - Vision
+  - Story, mission, and vision content
 
 - Contact (`contact.html`)
-  - Business details
-  - Address
-  - Opening hours
+  - Business contact information
+  - Contact form with validation
+  - Interactive responsive map
 
 - Enquiry (`enquiry.html`)
-  - Contact form for customer questions
+  - Product/service enquiry form
+  - Quantity and message fields
+  - Submission feedback status

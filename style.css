@@ -110,6 +110,36 @@ p {
     backdrop-filter: blur(14px);
     border-bottom: 1px solid rgba(103, 64, 45, 0.1);
 }
+.menu-toggle {
+    display: none;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    border: 1px solid rgba(103, 64, 45, 0.15);
+    background: var(--cream);
+    position: relative;
+    cursor: pointer;
+    transition: var(--transition);
+}
+.menu-toggle::before,
+.menu-toggle::after,
+.menu-toggle span {
+    content: "";
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    height: 3px;
+    border-radius: 999px;
+    background: var(--espresso);
+    transition: var(--transition);
+}
+.menu-toggle::before { top: 15px; }
+.menu-toggle span { top: 22px; }
+.menu-toggle::after { top: 29px; }
+.menu-toggle[aria-expanded="true"]::before { transform: rotate(45deg); top: 22px; }
+.menu-toggle[aria-expanded="true"] span { opacity: 0; }
+.menu-toggle[aria-expanded="true"]::after { transform: rotate(-45deg); top: 22px; }
+
 .nav-container {
     min-height: 82px;
     display: flex;
@@ -141,6 +171,9 @@ p {
     display: flex;
     align-items: center;
     gap: 5px;
+}
+.main-nav.active {
+    display: flex;
 }
 .main-nav a {
     position: relative;
@@ -574,6 +607,103 @@ p {
 /* =========================================================
    13. MENU CARDS
    ========================================================= */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+.menu-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    margin-bottom: 30px;
+}
+.menu-search {
+    flex: 1 1 260px;
+}
+.menu-search input {
+    width: 100%;
+    border: 2px solid #eadfd6;
+    background: var(--white);
+    border-radius: 999px;
+    padding: 14px 18px;
+    color: var(--text);
+    box-shadow: 0 6px 18px rgba(36, 20, 14, 0.04);
+    transition: var(--transition);
+}
+.menu-search input:focus {
+    outline: none;
+    border-color: var(--caramel);
+    box-shadow: 0 0 0 4px rgba(200,117,60,0.12);
+}
+.menu-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+.filter-btn {
+    border: 1px solid #d9c7b4;
+    border-radius: 999px;
+    background: linear-gradient(180deg, #fffdfb 0%, #f9efe6 100%);
+    color: var(--brown);
+    font-weight: 800;
+    padding: 11px 20px;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 6px 16px rgba(36, 20, 14, 0.04);
+}
+.filter-btn:hover,
+.filter-btn:focus-visible {
+    background: linear-gradient(180deg, #f7d3af 0%, #eaa35d 100%);
+    color: var(--espresso);
+    border-color: #d38c4c;
+    transform: translateY(-2px);
+    outline: none;
+}
+.filter-btn.active {
+    background: linear-gradient(180deg, #3d261d 0%, #24140e 100%);
+    color: var(--white);
+    border-color: var(--espresso);
+    box-shadow: 0 10px 18px rgba(36, 20, 14, 0.18);
+}
+.menu-sort {
+    margin-left: auto;
+}
+.menu-sort select {
+    min-width: 170px;
+    border: 2px solid #eadfd6;
+    background: var(--white);
+    color: var(--text);
+    border-radius: 999px;
+    padding: 12px 16px;
+    transition: var(--transition);
+    box-shadow: 0 6px 18px rgba(36, 20, 14, 0.04);
+}
+.menu-sort select:focus {
+    outline: none;
+    border-color: var(--caramel);
+    box-shadow: 0 0 0 4px rgba(200,117,60,0.12);
+}
+.menu-empty {
+    display: none;
+    margin-bottom: 24px;
+    padding: 18px 20px;
+    border-radius: 16px;
+    background: #fff7f0;
+    border: 1px dashed #d8bea2;
+    color: var(--brown);
+    font-weight: 700;
+    text-align: center;
+}
 .menu-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -729,6 +859,11 @@ p {
     display: grid;
     gap: 20px;
 }
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
 .form-group {
     display: grid;
     gap: 8px;
@@ -739,8 +874,10 @@ p {
 }
 .form-group input,
 .form-group textarea,
+.form-group select,
 .enquiry-form input,
-.enquiry-form textarea {
+.enquiry-form textarea,
+.enquiry-form select {
     width: 100%;
     border: 2px solid #eadfd6;
     background: #fffdfb;
@@ -751,8 +888,10 @@ p {
 }
 .form-group input:focus,
 .form-group textarea:focus,
+.form-group select:focus,
 .enquiry-form input:focus,
-.enquiry-form textarea:focus {
+.enquiry-form textarea:focus,
+.enquiry-form select:focus {
     outline: none;
     border-color: var(--caramel);
     box-shadow: 0 0 0 4px rgba(200,117,60,0.12);
@@ -762,26 +901,28 @@ p {
     min-height: 160px;
     resize: vertical;
 }
-/* =========================================================
-   16. ABOUT PAGE CONTENT
-   ========================================================= */
-.content-card {
-    background: var(--white);
-    padding: 45px;
-    border-radius: var(--radius-medium);
-    border: 1px solid #eadfd6;
-    box-shadow: var(--shadow-soft);
+.form-status {
+    display: none;
+    margin-top: 18px;
+    padding: 14px 18px;
+    border-radius: 12px;
+    font-weight: 700;
 }
-.content-card h2 {
-    font-size: 2rem;
-    margin-bottom: 15px;
+.form-status.success {
+    display: block;
+    background: rgba(31, 120, 79, 0.12);
+    color: #1d5a3d;
+    border: 1px solid rgba(31, 120, 79, 0.25);
 }
-.content-card + .content-card {
-    margin-top: 25px;
+.form-status.error {
+    display: block;
+    background: rgba(173, 46, 46, 0.08);
+    color: #8f2a2a;
+    border: 1px solid rgba(173, 46, 46, 0.2);
 }
-/* =========================================================
+/* =========================
    17. TABLET BREAKPOINT
-   ========================================================= */
+   ========================= */
 @media (max-width: 950px) {
     .nav-container {
         flex-direction: column;
@@ -824,6 +965,16 @@ p {
         flex-direction: column;
         text-align: center;
     }
+    .menu-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .menu-sort {
+        margin-left: 0;
+    }
+    .form-row {
+        grid-template-columns: 1fr;
+    }
 }
 /* =========================================================
    18. MOBILE BREAKPOINT
@@ -839,26 +990,32 @@ p {
         padding: 70px 0;
     }
     .site-header {
-        position: relative;
+        position: sticky;
     }
-    .logo {
-        font-size: 1.2rem;
-    }
-    .logo img {
-        width: 45px;
-        height: 45px;
+    .menu-toggle {
+        display: block;
     }
     .main-nav {
+        display: none;
         width: 100%;
-        gap: 3px;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 14px 0 8px;
+        background: rgba(255,255,255,0.95);
+        border-top: 1px solid rgba(103, 64, 45, 0.1);
+    }
+    .main-nav.active {
+        display: flex;
     }
     .main-nav a {
-        padding: 8px 8px;
-        font-size: 0.78rem;
+        width: 100%;
+        text-align: center;
+        padding: 12px 16px;
     }
     .main-nav .nav-button {
         margin-left: 0;
-        padding: 9px 13px;
+        width: calc(100% - 18px);
+        margin: 0 auto 8px;
     }
     .hero {
         min-height: auto;
@@ -951,6 +1108,41 @@ p {
         transition: none !important;
     }
 }
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    cursor: pointer;
+    padding: 20px;
+}
+.lightbox img {
+    max-width: 90%;
+    max-height: 85%;
+    object-fit: contain;
+    border-radius: 14px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+}
+.lightbox-close {
+    position: absolute;
+    top: 22px;
+    right: 22px;
+    width: 46px;
+    height: 46px;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+    color: var(--white);
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+}
 .map-wrapper {
     width: 100%;
     margin-top: 30px;
@@ -963,77 +1155,4 @@ p {
     width: 100%;
     min-height: 320px;
     border: 0;
-}
-.contact-links,
-.social-links {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 16px;
-    margin-top: 32px;
-}
-.social-button {
-    min-width: 150px;
-}
-.facebook-button {
-    background: #1877f2;
-    color: var(--white);
-}
-.facebook-button:hover {
-    background: #0e5cc7;
-    transform: translateY(-3px);
-}
-.tiktok-button {
-    background: #111111;
-    color: var(--white);
-}
-.tiktok-button:hover {
-    background: #3a3a3a;
-    transform: translateY(-3px);
-}
-.tiktok-card {
-    position: relative;
-    width: min(920px, 100%);
-    margin: 0 auto;
-    border-radius: var(--radius-large);
-    overflow: hidden;
-    box-shadow: var(--shadow-large);
-    transition: var(--transition);
-}
-.tiktok-card:hover {
-    transform: translateY(-4px);
-}
-.tiktok-card a {
-    display: block;
-    position: relative;
-}
-.tiktok-card img {
-    display: block;
-    width: 100%;
-    height: 420px;
-    object-fit: cover;
-}
-.tiktok-overlay {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background: rgba(17, 17, 17, 0.5);
-    color: var(--white);
-}
-.tiktok-overlay span {
-    display: inline-block;
-    margin-bottom: 10px;
-    font-size: 0.8rem;
-    font-weight: 800;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-}
-.tiktok-overlay p {
-    color: var(--white);
-    font-size: clamp(1.5rem, 3vw, 2.5rem);
-    font-weight: 700;
 }

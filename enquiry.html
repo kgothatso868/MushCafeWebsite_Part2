@@ -3,8 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Send an enquiry to Mush Cafe about orders, catering, or general questions.">
-    <title>Mush Cafe | Enquiry</title>
+    <meta name="description" content="Send an enquiry to Mush Cafe about menu items, catering, orders, or general questions in Randburg.">
+    <meta name="keywords" content="Mush Cafe enquiry, order enquiry, Randburg café, local food order, grilled chicken enquiry">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Enquire With Mush Cafe | Orders and Questions">
+    <meta property="og:description" content="Ask Mush Cafe about menu items, quantities, and local service enquiries.">
+    <meta property="og:type" content="website">
+    <title>Enquiry Mush Cafe | Menu and Orders</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -17,6 +22,7 @@
             </a>
 
             <!-- Main navigation -->
+            <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false"><span></span></button>
             <nav class="main-nav" aria-label="Main navigation">
                 <a href="index.html">Home</a>
                 <a href="menu.html">Menu</a>
@@ -46,28 +52,43 @@
                         <h2 id="form-heading">Ask us anything</h2>
                     </div>
 
-                    <form class="enquiry-form" action="#" method="post">
-                        <div class="form-group">
-                            <label for="full-name">Full name</label>
-                            <input type="text" id="full-name" name="full-name" placeholder="Enter your full name" required>
+                    <form id="enquiryForm" class="enquiry-form" action="#" method="post" novalidate>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="enquiryName">Full name</label>
+                                <input type="text" id="enquiryName" name="enquiryName" placeholder="Enter your full name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="enquiryEmail">Email address</label>
+                                <input type="email" id="enquiryEmail" name="enquiryEmail" placeholder="Enter your email" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="enquiryProduct">Product or service</label>
+                                <select id="enquiryProduct" name="enquiryProduct" required>
+                                    <option value="">Select an item</option>
+                                    <option value="Russian Kota">Russian Kota</option>
+                                    <option value="Chicken and chips">Chicken and chips</option>
+                                    <option value="Burger and chips">Burger and chips</option>
+                                    <option value="Combo Meal">Combo Meal</option>
+                                    <option value="General catering enquiry">General catering enquiry</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="enquiryQuantity">Quantity</label>
+                                <input type="number" id="enquiryQuantity" name="enquiryQuantity" min="1" placeholder="Enter quantity" required>
+                            </div>
                         </div>
 
                         <div class="form-group">
-                            <label for="email">Email address</label>
-                            <input type="email" id="email" name="email" placeholder="Enter your email" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject" placeholder="Order, question, or enquiry">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
+                            <label for="enquiryMessage">Enquiry details</label>
+                            <textarea id="enquiryMessage" name="enquiryMessage" placeholder="Tell us about your order or question..." required></textarea>
                         </div>
 
                         <button type="submit" class="button primary-button">Send Enquiry</button>
+                        <div id="enquiryFormStatus" class="form-status" aria-live="polite"></div>
                     </form>
                 </div>
             </div>
@@ -95,5 +116,6 @@
             <p>&copy; 2026 Mush Cafe. All rights reserved.</p>
         </div>
     </footer>
+    <script src="js/script.js"></script>
 </body>
 </html>

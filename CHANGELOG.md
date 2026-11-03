@@ -1,5 +1,29 @@
 # Changelog
 
+## [2026-11-02] - Final POE completion and project polishing
+
+### Added
+- Final project proposal documentation to satisfy rubric requirements.
+- Improved mobile navigation consistency across the site.
+- Menu search, price sorting, and category filter logic refinement.
+- Contact and enquiry form validation with direct user feedback.
+- SEO metadata updates across pages.
+- `robots.txt` and `sitemap.xml` for search engine readiness.
+- Final documentation updates to capture project completion details.
+
+### Updated
+- `index.html` mobile navigation markup for consistent hamburger button rendering.
+- `menu.html` menu search and sorting layout for a cleaner layout and better interaction.
+- `contact.html` form and map section layout.
+- `enquiry.html` relevant product and quantity field improvements.
+- `README.md` to better match the final project scope and final phase requirements.
+- `sitemap.md` and `wireframe.md` to match the implemented website.
+
+### Fixed
+- Mobile nav markup inconsistency between the home page and the inner pages.
+- Final website documentation alignment with project implementation.
+- SEO metadata placeholders and structure for deployment readiness.
+
 ## [2026-09-18] - Project improvement and Part 2 completion
 
 ### What was wrong in Part 1

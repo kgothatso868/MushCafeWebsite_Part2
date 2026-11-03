@@ -3,7 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Browse the Mush Cafe menu featuring kotas, burgers, chips, combos, and drinks.">
+    <meta name="description" content="Browse the Mush Cafe menu featuring kotas, burgers, chips, combo meals, and grilled chicken favourites in Randburg.">
+    <meta name="keywords" content="Mush Cafe menu, Randburg food menu, kotas, burgers, chicken and chips, combo meals">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Mush Cafe Menu | Local Favourites and Meals">
+    <meta property="og:description" content="Explore the favourite menu items, prices, and tasty meals served at Mush Cafe.">
+    <meta property="og:type" content="website">
     <title>Mush Cafe | Menu</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -17,6 +22,7 @@
             </a>
 
             <!-- Main navigation -->
+            <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false"><span></span></button>
             <nav class="main-nav" aria-label="Main navigation">
                 <a href="index.html">Home</a>
                 <a href="menu.html" class="active">Menu</a>
@@ -64,11 +70,31 @@
                     <p class="eyebrow">Popular picks</p>
                     <h2 id="menu-list-heading">Made to satisfy every appetite</h2>
                 </div>
-
+                <div class="menu-toolbar">
+                    <div class="menu-search">
+                        <label class="sr-only" for="menuSearch" style="position:absolute;left:-9999px;">Search menu items</label>
+                        <input type="text" id="menuSearch" placeholder="Search for food..." aria-label="Search menu items">
+                    </div>
+                    <div class="menu-filters" aria-label="Filter menu by category">
+                        <button class="filter-btn active" type="button" data-category="all">All</button>
+                        <button class="filter-btn" type="button" data-category="kotas">Kotas</button>
+                        <button class="filter-btn" type="button" data-category="burgers">Burgers</button>
+                        <button class="filter-btn" type="button" data-category="chicken">Chicken</button>
+                    </div>
+                    <div class="menu-sort">
+                        <label for="menuSort" class="sr-only" style="position:absolute;left:-9999px;">Sort menu items</label>
+                        <select id="menuSort" aria-label="Sort menu by price">
+                            <option value="default">Sort by price</option>
+                            <option value="low-high">Price: low to high</option>
+                            <option value="high-low">Price: high to low</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="menuNoResults" class="menu-empty" hidden>No menu items match your search or filter. Try another option.</div>
                 <div class="menu-grid">
-                    <article class="menu-card">
+                    <article class="menu-card" data-category="kotas">
                         <div class="menu-card-image">
-                            <img src="images/Kota.jpeg" alt="Russian Kota meal served with chips and sauce" loading="lazy">
+                            <img src="images/Kota.jpeg" alt="Russian Kota meal served with chips and sauce" loading="lazy" class="gallery-image">
                         </div>
                         <div class="menu-card-content">
                             <h3>Russian and Viana Kota</h3>
@@ -77,9 +103,9 @@
                         </div>
                     </article>
                     
-                    <article class="menu-card">
+                    <article class="menu-card" data-category="kotas">
                         <div class="menu-card-image">
-                            <img src="images/Russian Kota.jpeg" alt="Russian Kota meal served with chips and sauce" loading="lazy">
+                            <img src="images/Russian Kota.jpeg" alt="Russian Kota meal served with chips and sauce" loading="lazy" class="gallery-image">
                         </div>
                         <div class="menu-card-content">
                             <h3>Russian Kota</h3>
@@ -88,10 +114,9 @@
                         </div>
                     </article>
 
-                    <article class="menu-card">
+                    <article class="menu-card" data-category="chicken">
                         <div class="menu-card-image">
-                            <img src="images/Chicken (1.4) and Chips.jpeg" alt="Chicken (1/4) and chips meal" loading="lazy">
-
+                            <img src="images/Chicken (1.4) and Chips.jpeg" alt="Chicken (1/4) and chips meal" loading="lazy" class="gallery-image">
                         </div>
                         <div class="menu-card-content">
                             <h3>Chicken (1/4) and chips</h3>
@@ -100,9 +125,9 @@
                         </div>
                     </article>
 
-                    <article class="menu-card">
+                    <article class="menu-card" data-category="chicken">
                         <div class="menu-card-image">
-                            <img src="images/Chicken (full) and chips.jpeg" alt="Chicken (Full) and chips meal" loading="lazy">
+                            <img src="images/Chicken (full) and chips.jpeg" alt="Chicken (Full) and chips meal" loading="lazy" class="gallery-image">
                         </div>
                         <div class="menu-card-content">
                             <h3>Chicken (Full) and chips</h3>
@@ -110,9 +135,9 @@
                             <span class="price">R195,00</span>
                         </div>
                     </article>
-                    <article class="menu-card">
+                    <article class="menu-card" data-category="chicken">
                         <div class="menu-card-image">
-                            <img src="images/Chicken (half) and chips.jpeg" alt="Chicken (1/2) and chips meal" loading="lazy">
+                            <img src="images/Chicken (half) and chips.jpeg" alt="Chicken (1/2) and chips meal" loading="lazy" class="gallery-image">
                         </div>
                         <div class="menu-card-content">
                             <h3>Chicken (half) and chips</h3>
@@ -120,9 +145,9 @@
                             <span class="price">R117,00</span>
                         </div>
                     </article>
-                    <article class="menu-card">
+                    <article class="menu-card" data-category="burgers">
                         <div class="menu-card-image">
-                            <img src="images/Burger and chips.jpeg" alt="Burger and chips meal" loading="lazy">
+                            <img src="images/Burger and chips.jpeg" alt="Burger and chips meal" loading="lazy" class="gallery-image">
                         </div>
                         <div class="menu-card-content">
                             <h3>Rib Burger &amp; Chips</h3>
@@ -131,9 +156,9 @@
                         </div>
                     </article>
 
-                    <article class="menu-card">
+                    <article class="menu-card" data-category="chicken">
                         <div class="menu-card-image">
-                            <img src="images/Full chicken.jpeg" alt="Full chicken meal" loading="lazy">
+                            <img src="images/Full chicken.jpeg" alt="Full chicken meal" loading="lazy" class="gallery-image">
                         </div>
                         <div class="menu-card-content">
                             <h3>Chicken Only (full)</h3>
@@ -142,9 +167,9 @@
                         </div>
                     </article>
 
-                    <article class="menu-card">
+                    <article class="menu-card" data-category="burgers">
                         <div class="menu-card-image">
-                            <img src="images/Rib.jpeg" alt="Rib burger meal" loading="lazy">
+                            <img src="images/Rib.jpeg" alt="Rib burger meal" loading="lazy" class="gallery-image">
                         </div>
                         <div class="menu-card-content">
                             <h3>Beef Patty and Russian Kota</h3>
@@ -153,9 +178,9 @@
                         </div>
                     </article>
 
-                    <article class="menu-card">
+                    <article class="menu-card" data-category="kotas">
                         <div class="menu-card-image">
-                            <img src="images/chips and russian.jpeg" alt="Russian Kota and chips combo meal" loading="lazy">
+                            <img src="images/chips and russian.jpeg" alt="Russian Kota and chips combo meal" loading="lazy" class="gallery-image">
                         </div>
                         <div class="menu-card-content">
                             <h3>Russian &amp; Chips Combo</h3>
@@ -164,9 +189,9 @@
                         </div>
                     </article>
 
-                    <article class="menu-card">
+                    <article class="menu-card" data-category="kotas">
                         <div class="menu-card-image">
-                            <img src="images/Combo.jpeg" alt="Combo meal with chips and fried chicken" loading="lazy">
+                            <img src="images/Combo.jpeg" alt="Combo meal with chips and fried chicken" loading="lazy" class="gallery-image">
                         </div>
                         <div class="menu-card-content">
                             <h3>Combo Meal</h3>
@@ -200,5 +225,6 @@
             <p>&copy; 2026 Mush Cafe. All rights reserved.</p>
         </div>
     </footer>
+    <script src="js/script.js"></script>
 </body>
 </html>
