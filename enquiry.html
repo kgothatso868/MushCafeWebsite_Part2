@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- SEO information to help search engines understand the page -->
+    <!-- SEO information -->
     <meta name="description" content="Send an enquiry to Mush Cafe about menu items, catering, orders, or general questions in Randburg.">
     <meta name="keywords" content="Mush Cafe enquiry, order enquiry, Randburg café, local food order, grilled chicken enquiry">
     <meta name="robots" content="index, follow">
@@ -17,28 +16,26 @@
     <meta property="og:type" content="website">
 
     <title>Enquiry Mush Cafe | Menu and Orders</title>
-
-    <!-- Link to the website's shared stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <!-- Website header containing the logo and main navigation -->
+    <!-- Website header -->
     <header class="site-header">
         <div class="container nav-container">
 
-            <!-- Logo links visitors back to the home page -->
+            <!-- Logo -->
             <a href="index.html" class="logo" aria-label="Mush Cafe home page">
                 <img src="images/Logo.jpg" alt="Mush Cafe logo">
                 <span>Mush Cafe</span>
             </a>
 
-            <!-- Button used to open and close navigation on smaller screens -->
+            <!-- Mobile navigation button -->
             <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
                 <span></span>
             </button>
 
-            <!-- Main navigation links connecting all five website pages -->
+            <!-- Main navigation -->
             <nav class="main-nav" aria-label="Main navigation">
                 <a href="index.html">Home</a>
                 <a href="menu.html">Menu</a>
@@ -49,10 +46,10 @@
         </div>
     </header>
 
-    <!-- Main content of the enquiry page -->
+    <!-- Main content -->
     <main>
 
-        <!-- Introduction section explaining the purpose of the page -->
+        <!-- Page introduction -->
         <section class="page-hero" aria-labelledby="enquiry-heading">
             <div class="container">
                 <p class="eyebrow">We are here to help</p>
@@ -61,21 +58,21 @@
             </div>
         </section>
 
-        <!-- Enquiry form section where visitors can submit their requests -->
+        <!-- Enquiry form section -->
         <section class="section" aria-labelledby="form-heading">
             <div class="container">
                 <div class="enquiry-wrapper">
 
-                    <!-- Heading introducing the enquiry form -->
+                    <!-- Form heading -->
                     <div class="section-heading center">
                         <p class="eyebrow">Contact form</p>
                         <h2 id="form-heading">Ask us anything</h2>
                     </div>
 
-                    <!-- Form collects the visitor's details and enquiry information -->
-                    <form id="enquiryForm" class="enquiry-form" action="#" method="post" novalidate>
+                    <!-- Enquiry form with browser validation and email fallback -->
+                    <form id="enquiryForm" class="enquiry-form" action="mailto:info@mushcafe.com" method="post" enctype="text/plain">
 
-                        <!-- Personal information fields -->
+                        <!-- Personal information -->
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="enquiryName">Full name</label>
@@ -88,7 +85,7 @@
                             </div>
                         </div>
 
-                        <!-- Product selection and quantity fields -->
+                        <!-- Product and quantity -->
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="enquiryProduct">Product or service</label>
@@ -108,16 +105,16 @@
                             </div>
                         </div>
 
-                        <!-- Text area for visitors to explain their requests -->
+                        <!-- Enquiry message -->
                         <div class="form-group">
                             <label for="enquiryMessage">Enquiry details</label>
                             <textarea id="enquiryMessage" name="enquiryMessage" placeholder="Tell us about your order or question..." required></textarea>
                         </div>
 
-                        <!-- Submit button sends the form data to the JavaScript validation -->
+                        <!-- Submit button -->
                         <button type="submit" class="button primary-button">Send Enquiry</button>
 
-                        <!-- Displays validation messages and submission feedback -->
+                        <!-- Form feedback area -->
                         <div id="enquiryFormStatus" class="form-status" aria-live="polite"></div>
                     </form>
                 </div>
@@ -125,7 +122,7 @@
         </section>
     </main>
 
-    <!-- Website footer containing the business name and page links -->
+    <!-- Website footer -->
     <footer class="site-footer">
         <div class="container footer-content">
 
@@ -135,7 +132,7 @@
                 <p>Good food. Good moments.</p>
             </div>
 
-            <!-- Footer navigation provides another way to access website pages -->
+            <!-- Footer navigation -->
             <div class="footer-links" aria-label="Footer navigation">
                 <a href="index.html">Home</a>
                 <a href="menu.html">Menu</a>
@@ -151,7 +148,7 @@
         </div>
     </footer>
 
-    <!-- JavaScript file handles navigation and enquiry form validation -->
+    <!-- Load website JavaScript -->
     <script src="js/script.js"></script>
 </body>
 </html>
