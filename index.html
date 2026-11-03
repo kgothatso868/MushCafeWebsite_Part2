@@ -1,28 +1,44 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Basic document settings -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO metadata helps search engines understand the website -->
     <meta name="description" content="Mush Cafe serves delicious kotas, burgers, chips, drinks, and fresh takeaway meals in a warm local café setting.">
     <meta name="keywords" content="Mush Cafe, Randburg café, local food, burgers, kotas, grilled chicken, takeaway food">
     <meta name="robots" content="index, follow">
+
+    <!-- Social media preview information -->
     <meta property="og:title" content="Mush Cafe | Burgers, Kotas and Local Favourites">
     <meta property="og:description" content="Fresh food, warm service, and local favourites at Mush Cafe in Randburg.">
     <meta property="og:type" content="website">
+
     <title>Mush Cafe | Home</title>
+
+    <!-- Connects the HTML page to the shared CSS stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <!-- Site header and navigation -->
+    <!-- Website header containing the logo and navigation menu -->
     <header class="site-header">
         <div class="container nav-container">
+
+            <!-- Website logo linking back to the home page -->
             <a href="index.html" class="logo" aria-label="Mush Cafe home page">
                 <img src="images/Logo.jpg" alt="Mush Cafe logo">
                 <span>Mush Cafe</span>
             </a>
 
-            <!-- Main navigation -->
-             <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false"><span></span></button>
+            <!-- Mobile navigation toggle button -->
+            <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span>
+            </button>
+
+            <!-- Main navigation connecting the five website pages -->
             <nav class="main-nav" aria-label="Main navigation">
                 <a href="index.html" class="active">Home</a>
                 <a href="menu.html">Menu</a>
@@ -33,21 +49,27 @@
         </div>
     </header>
 
+    <!-- Main content displayed on the home page -->
     <main>
-        <!-- Hero section -->
+
+        <!-- Hero section introduces Mush Cafe and highlights the main message -->
         <section class="hero" aria-labelledby="home-heading">
             <div class="container hero-content">
+
+                <!-- Welcome message and buttons directing visitors to important pages -->
                 <div class="hero-text">
                     <p class="eyebrow">Welcome to Mush Cafe</p>
                     <h1 id="home-heading">Good Food.<br><span>Good Moments.</span></h1>
                     <p>Enjoy freshly prepared kotas, burgers, chips, drinks and takeaway favourites crafted for everyday comfort and community connection.</p>
 
+                    <!-- Main call-to-action links for viewing the menu or making an enquiry -->
                     <div class="hero-buttons">
                         <a href="menu.html" class="button primary-button">View Our Menu</a>
                         <a href="enquiry.html" class="button secondary-button">Make An Enquiry</a>
                     </div>
                 </div>
 
+                <!-- Main business image with responsive image settings -->
                 <div class="hero-image">
                     <img
                         src="images/Mush Cafe front.jpeg"
@@ -59,34 +81,42 @@
             </div>
         </section>
 
-        <!-- Main services overview -->
+        <!-- Services section displaying the main food and drink categories -->
         <section class="services section" aria-labelledby="offers-heading">
             <div class="container">
+
+                <!-- Section heading and short introduction -->
                 <div class="section-heading">
                     <p class="eyebrow">What we offer</p>
                     <h2 id="offers-heading">Something for every craving</h2>
                     <p>Simple, tasty food made for everyday moments and quick stop-ins.</p>
                 </div>
 
+                <!-- Grid containing individual service cards -->
                 <div class="card-grid">
+
+                    <!-- Burger category card -->
                     <article class="service-card">
                         <div class="card-icon" aria-hidden="true">🍔</div>
                         <h3>Burgers</h3>
                         <p>Enjoy juicy burgers prepared to satisfy your hunger and keep you coming back.</p>
                     </article>
 
+                    <!-- Chips category card -->
                     <article class="service-card">
                         <div class="card-icon" aria-hidden="true">🍟</div>
                         <h3>Chips</h3>
                         <p>Perfectly cooked chips that pair beautifully with every meal on the menu.</p>
                     </article>
 
+                    <!-- Kota category card -->
                     <article class="service-card">
                         <div class="card-icon" aria-hidden="true">🥪</div>
                         <h3>Kotas</h3>
                         <p>Classic local favourites packed with flavour, freshness, and value.</p>
                     </article>
 
+                    <!-- Drinks category card -->
                     <article class="service-card">
                         <div class="card-icon" aria-hidden="true">🥤</div>
                         <h3>Drinks</h3>
@@ -96,9 +126,11 @@
             </div>
         </section>
 
-        <!-- About preview section -->
+        <!-- About preview section introduces the business and its values -->
         <section class="about-preview section" aria-labelledby="about-preview-heading">
             <div class="container split-section">
+
+                <!-- Short business introduction linking to the full About page -->
                 <div>
                     <p class="eyebrow">About us</p>
                     <h2 id="about-preview-heading">Local food. Quality service.</h2>
@@ -106,6 +138,7 @@
                     <a href="about.html" class="text-link">Learn more about us →</a>
                 </div>
 
+                <!-- Highlight card showing one of the business values -->
                 <div class="highlight-box">
                     <span>01</span>
                     <h3>Quality</h3>
@@ -114,28 +147,34 @@
             </div>
         </section>
 
-        <!-- Call to action -->
+        <!-- Call-to-action section encourages visitors to contact the business -->
         <section class="cta-section" aria-labelledby="cta-heading">
             <div class="container cta-content">
+
+                <!-- Short message encouraging visitors to get in touch -->
                 <div>
                     <p class="eyebrow">Ready to order?</p>
                     <h2 id="cta-heading">Have a question?</h2>
                     <p>Get in touch with Mush Cafe today and plan your next meal.</p>
                 </div>
 
+                <!-- Button links visitors to the Contact page -->
                 <a href="contact.html" class="button light-button">Contact Us</a>
             </div>
         </section>
     </main>
 
-    <!-- Site footer -->
+    <!-- Website footer containing business information and navigation links -->
     <footer class="site-footer">
         <div class="container footer-content">
+
+            <!-- Business name and slogan -->
             <div>
                 <h3>Mush Cafe</h3>
                 <p>Good food. Good moments.</p>
             </div>
 
+            <!-- Footer navigation provides access to all website pages -->
             <div class="footer-links" aria-label="Footer navigation">
                 <a href="index.html">Home</a>
                 <a href="menu.html">Menu</a>
@@ -145,10 +184,13 @@
             </div>
         </div>
 
+        <!-- Copyright notice displayed at the bottom of the website -->
         <div class="container copyright">
             <p>&copy; 2026 Mush Cafe. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- JavaScript file controls interactive website features -->
     <script src="js/script.js"></script>
 </body>
 </html>
