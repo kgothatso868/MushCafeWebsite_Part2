@@ -1,4 +1,5 @@
+
 User-agent: *
 Allow: /
 
-Sitemap: https://mushcafe.netlify.app/sitemap.xml
+Sitemap: https://mush-cafe-kgothatso.netlify.app/sitemap.xml
