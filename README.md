@@ -113,9 +113,18 @@ The final phase adds JavaScript-driven interactivity and SEO readiness, includin
 4. Navigate through the pages using the site navigation.
 
 ## Deployment information
-This website is a static multi-page website and can be deployed to free hosting platforms such as GitHub Pages or Netlify. After deployment, update the final live domain in:
-- `robots.txt`
-- `sitemap.xml`
+This website is a static multi-page website and can be deployed using Netlify.
+Live Website:https://mush-cafe-kgothatso.netlify.app/
+GitHub Repository: https://github.com/kgothatso868/MushCafeWebsite_Part2
+The website is deployed from the main branch of the GitHub repository. Updates pushed to the repository can be published through Netlify.
+
+SEO files
+
+robots.txt - Provides instructions for search engine crawlers.
+
+sitemap.xml - Helps search engines discover the website's pages.
+
+
 
 ## Changelog
 See `CHANGELOG.md` for a detailed history of updates and improvements made during the project.
