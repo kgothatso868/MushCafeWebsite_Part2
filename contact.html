@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,7 +22,6 @@
 </head>
 
 <body>
-    <!-- Site header and navigation -->
 
     <!-- HEADER: Displays the cafe logo and navigation links to the website pages. -->
     <header class="site-header">
@@ -33,8 +33,6 @@
                 <span>Mush Cafe</span>
             </a>
 
-            <!-- Main navigation -->
-            <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false"><span></span></button>
             <!-- NAVIGATION: Allows visitors to move between the main website pages. -->
             <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
                 <span></span>
@@ -43,24 +41,26 @@
             <nav class="main-nav" aria-label="Main navigation">
                 <a href="index.html">Home</a>
                 <a href="menu.html">Menu</a>
-@@ -33,8 +48,11 @@
+                <a href="about.html">About</a>
+                <a href="contact.html" class="active">Contact</a>
+                <a href="enquiry.html" class="nav-button">Enquiry</a>
+            </nav>
         </div>
     </header>
 
 
     <!-- MAIN CONTENT: Contains the business contact information, contact form and location map. -->
     <main>
-        <!-- Contact page hero -->
 
         <!-- PAGE INTRODUCTION: Welcomes visitors and introduces the Contact page. -->
         <section class="page-hero" aria-labelledby="contact-heading">
             <div class="container">
                 <p class="eyebrow">Get in touch</p>
-@@ -43,15 +61,21 @@ <h1 id="contact-heading">Contact Mush Cafe</h1>
+                <h1 id="contact-heading">Contact Mush Cafe</h1>
+                <p>We would love to hear from you about orders, enquiries, or local food needs.</p>
             </div>
         </section>
 
-        <!-- Business information cards -->
 
         <!-- BUSINESS CONTACT DETAILS: Displays the cafe's contact information, location and opening hours. -->
         <section class="section" aria-labelledby="contact-details-heading">
@@ -79,7 +79,8 @@
                     <article class="info-card">
                         <h3>Business Details</h3>
                         <p><strong>Name:</strong> Mush Cafe Grilled Chicken</p>
-@@ -60,6 +84,7 @@ <h3>Business Details</h3>
+                        <p><strong>Contact:</strong> 061 418 9004</p>
+                        <p><strong>Email:</strong> info@mushcafe.com</p>
                         <p><strong>Website:</strong> <a href="https://mushcafe.com" target="_blank" rel="noopener noreferrer">mushcafe.com</a></p>
                     </article>
 
@@ -87,7 +88,9 @@
                     <article class="info-card">
                         <h3>Location</h3>
                         <address>
-@@ -69,6 +94,7 @@ <h3>Location</h3>
+                            Ext 5, 1207 Blue Gum St,<br>
+                            Fleurhof, Randburg,<br>
+                            2070
                         </address>
                     </article>
 
@@ -95,7 +98,9 @@
                     <article class="info-card">
                         <h3>Opening Hours</h3>
                         <ul>
-@@ -78,43 +104,55 @@ <h3>Opening Hours</h3>
+                            <li>Monday - Saturday: 9:30 AM - 8:00 PM</li>
+                            <li>Sunday: 9:30 AM - 8:00 PM</li>
+                        </ul>
                     </article>
                 </div>
 
@@ -151,7 +156,12 @@
                             <div class="form-group">
                                 <label for="messageType">Message type</label>
                                 <select id="messageType" name="messageType" required>
-@@ -127,16 +165,19 @@ <h2 id="contact-form-heading">Contact form</h2>
+                                    <option value="">Select an option</option>
+                                    <option value="General enquiry">General enquiry</option>
+                                    <option value="Order enquiry">Order enquiry</option>
+                                    <option value="Feedback">Feedback</option>
+                                    <option value="Other">Other</option>
+                                </select>
                             </div>
                         </div>
 
@@ -171,11 +181,20 @@
                 <div class="map-wrapper">
                     <iframe
                         class="map-frame"
-@@ -154,14 +195,18 @@ <h2 id="contact-form-heading">Contact form</h2>
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3580.282345934955!2d27.90166197622571!3d-26.187492063295107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e95a08b041a97bb%3A0x251e9ee63250a967!2sBlue%20Gum%20St%2C%20Vogelstruisfontein%2C%20Randburg!5e0!3m2!1sen!2sza!4v1789759092368!5m2!1sen!2sza"
+                        width="600"
+                        height="450"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        title="Mush Cafe location map">
+                    </iframe>
+                </div>
+            </div>
         </section>
     </main>
 
-    <!-- Site footer -->
 
     <!-- FOOTER: Displays the business name, slogan, navigation links and copyright notice. -->
     <footer class="site-footer">
@@ -191,7 +210,9 @@
             <div class="footer-links" aria-label="Footer navigation">
                 <a href="index.html">Home</a>
                 <a href="menu.html">Menu</a>
-@@ -171,10 +216,13 @@ <h3>Mush Cafe Grilled Chicken</h3>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="enquiry.html">Enquiry</a>
             </div>
         </div>
 
@@ -205,4 +226,4 @@
     <script src="js/script.js"></script>
 </body>
 </html>
-</html>
+
