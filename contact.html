@@ -1,28 +1,43 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Set the character encoding and responsive page settings. -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Provide search engines with information about the Contact page. -->
     <meta name="description" content="Contact Mush Cafe in Randburg for orders, questions, and feedback about our local meals and services.">
     <meta name="keywords" content="Mush Cafe contact, Randburg café, order enquiry, grilled chicken, local food contact">
     <meta name="robots" content="index, follow">
+
+    <!-- Define the title and description used when sharing this page on social media. -->
     <meta property="og:title" content="Contact Mush Cafe | Randburg">
     <meta property="og:description" content="Get in touch with Mush Cafe for orders, questions, and menu enquiries.">
     <meta property="og:type" content="website">
+
+    <!-- Set the browser tab title and link the external stylesheet. -->
     <title>Contact Mush Cafe | Randburg</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <!-- Site header and navigation -->
+
+    <!-- HEADER: Displays the cafe logo and navigation links to the website pages. -->
     <header class="site-header">
         <div class="container nav-container">
+
+            <!-- Logo provides a link back to the home page. -->
             <a href="index.html" class="logo" aria-label="Mush Cafe home page">
                 <img src="images/Logo.jpg" alt="Mush Cafe logo">
                 <span>Mush Cafe</span>
             </a>
 
-            <!-- Main navigation -->
-            <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false"><span></span></button>
+            <!-- NAVIGATION: Allows visitors to move between the main website pages. -->
+            <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span>
+            </button>
+
             <nav class="main-nav" aria-label="Main navigation">
                 <a href="index.html">Home</a>
                 <a href="menu.html">Menu</a>
@@ -33,8 +48,11 @@
         </div>
     </header>
 
+
+    <!-- MAIN CONTENT: Contains the business contact information, contact form and location map. -->
     <main>
-        <!-- Contact page hero -->
+
+        <!-- PAGE INTRODUCTION: Welcomes visitors and introduces the Contact page. -->
         <section class="page-hero" aria-labelledby="contact-heading">
             <div class="container">
                 <p class="eyebrow">Get in touch</p>
@@ -43,15 +61,21 @@
             </div>
         </section>
 
-        <!-- Business information cards -->
+
+        <!-- BUSINESS CONTACT DETAILS: Displays the cafe's contact information, location and opening hours. -->
         <section class="section" aria-labelledby="contact-details-heading">
             <div class="container">
+
+                <!-- Section heading introduces the available contact methods. -->
                 <div class="section-heading center">
                     <p class="eyebrow">Visit or connect</p>
                     <h2 id="contact-details-heading">We are here to help</h2>
                 </div>
 
+                <!-- INFORMATION CARDS: Organise the business details into three clear sections. -->
                 <div class="info-grid">
+
+                    <!-- BUSINESS DETAILS: Provides the business name, telephone number, email and website. -->
                     <article class="info-card">
                         <h3>Business Details</h3>
                         <p><strong>Name:</strong> Mush Cafe Grilled Chicken</p>
@@ -60,6 +84,7 @@
                         <p><strong>Website:</strong> <a href="https://mushcafe.com" target="_blank" rel="noopener noreferrer">mushcafe.com</a></p>
                     </article>
 
+                    <!-- LOCATION: Displays the business address for customers who want to visit. -->
                     <article class="info-card">
                         <h3>Location</h3>
                         <address>
@@ -69,6 +94,7 @@
                         </address>
                     </article>
 
+                    <!-- OPENING HOURS: Informs customers when the cafe is available. -->
                     <article class="info-card">
                         <h3>Opening Hours</h3>
                         <ul>
@@ -78,11 +104,13 @@
                     </article>
                 </div>
 
+                <!-- CONTACT LINKS: Give visitors quick access to the business website and email address. -->
                 <div class="contact-links">
                     <a href="https://mushcafe.com" class="button primary-button" target="_blank" rel="noopener noreferrer">Visit Website</a>
                     <a href="mailto:info@mushcafe.com" class="button secondary-button">Email Us</a>
                 </div>
 
+                <!-- SOCIAL MEDIA: Links customers to the cafe's Facebook and TikTok profiles. -->
                 <div class="social-links" aria-label="Social media links">
                     <a href="https://www.facebook.com/profile.php?id=61588521416761" class="button social-button facebook-button" target="_blank" rel="noopener noreferrer">Facebook</a>
                     <a href="https://www.tiktok.com/@mushcafe01" class="button social-button tiktok-button" target="_blank" rel="noopener noreferrer">TikTok</a>
@@ -90,31 +118,41 @@
             </div>
         </section>
 
+
+        <!-- CONTACT FORM AND MAP: Allows visitors to send messages and view the business location. -->
         <section class="section" aria-labelledby="contact-form-heading">
             <div class="container">
+
+                <!-- CONTACT FORM INTRODUCTION: Explains how visitors can send a message. -->
                 <div class="section-heading center">
                     <p class="eyebrow">Send a message</p>
                     <h2 id="contact-form-heading">Contact form</h2>
                 </div>
 
+                <!-- CONTACT FORM: Collects the visitor's details and message. -->
                 <div class="enquiry-wrapper">
                     <form id="contactForm" class="enquiry-form" novalidate>
+
+                        <!-- First row collects the visitor's name and telephone number. -->
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="contactName">Full name</label>
                                 <input id="contactName" name="contactName" type="text" placeholder="Enter your full name" required>
                             </div>
+
                             <div class="form-group">
                                 <label for="contactPhone">Phone number</label>
                                 <input id="contactPhone" name="contactPhone" type="tel" placeholder="Enter your contact number" required>
                             </div>
                         </div>
 
+                        <!-- Second row collects the visitor's email address and message category. -->
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="contactEmail">Email address</label>
                                 <input id="contactEmail" name="contactEmail" type="email" placeholder="Enter your email" required>
                             </div>
+
                             <div class="form-group">
                                 <label for="messageType">Message type</label>
                                 <select id="messageType" name="messageType" required>
@@ -127,16 +165,19 @@
                             </div>
                         </div>
 
+                        <!-- Message field allows visitors to explain their questions or requests. -->
                         <div class="form-group">
                             <label for="contactMessage">Message</label>
                             <textarea id="contactMessage" name="contactMessage" placeholder="Tell us how we can help..." required></textarea>
                         </div>
 
+                        <!-- Submit button and live status area provide feedback after form submission. -->
                         <button type="submit" class="button primary-button">Send Message</button>
                         <div id="contactFormStatus" class="form-status" aria-live="polite"></div>
                     </form>
                 </div>
 
+                <!-- GOOGLE MAP: Displays an embedded map to help visitors locate the business. -->
                 <div class="map-wrapper">
                     <iframe
                         class="map-frame"
@@ -154,14 +195,18 @@
         </section>
     </main>
 
-    <!-- Site footer -->
+
+    <!-- FOOTER: Displays the business name, slogan, navigation links and copyright notice. -->
     <footer class="site-footer">
         <div class="container footer-content">
+
+            <!-- Business name and slogan. -->
             <div>
                 <h3>Mush Cafe Grilled Chicken</h3>
                 <p>Good food. Good moments.</p>
             </div>
 
+            <!-- Footer navigation provides alternative links to the website pages. -->
             <div class="footer-links" aria-label="Footer navigation">
                 <a href="index.html">Home</a>
                 <a href="menu.html">Menu</a>
@@ -171,10 +216,13 @@
             </div>
         </div>
 
+        <!-- Copyright information displayed at the bottom of the page. -->
         <div class="container copyright">
             <p>&copy; 2026 Mush Cafe. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- Load JavaScript for mobile navigation and contact form validation. -->
     <script src="js/script.js"></script>
 </body>
 </html>
