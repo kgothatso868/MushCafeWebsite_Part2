@@ -1,19 +1,29 @@
+
 /* =========================================================
    MUSH CAFE
    PROFESSIONAL RESPONSIVE STYLESHEET
-   WEDES020 - PART 2
+   WEDE5020 - WEB DEVELOPMENT POE
    ========================================================= */
-/* =========================
+
+
+/* =========================================================
    1. CSS RESET
-   ========================= */
+   Removes default browser spacing and creates consistent
+   sizing across all website elements.
+   ========================================================= */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+/* Enables smooth scrolling when visitors use page links */
 html {
     scroll-behavior: smooth;
 }
+
+/* Sets the main font, background colour and text appearance */
 body {
     font-family: "Trebuchet MS", Arial, sans-serif;
     background: #fcf8f3;
@@ -21,30 +31,45 @@ body {
     line-height: 1.7;
     overflow-x: hidden;
 }
+
+/* Makes images responsive and prevents them from overflowing */
 img {
     display: block;
     max-width: 100%;
     height: auto;
 }
+
+/* Prevents embedded maps and videos from exceeding their containers */
 iframe {
     max-width: 100%;
 }
+
+/* Removes default link underlines */
 a {
     text-decoration: none;
     color: inherit;
 }
+
+/* Makes form controls use the same font as the website */
 button,
 input,
 textarea {
     font: inherit;
 }
+
+/* Customises the background and text colour when visitors select text */
 ::selection {
     background: #d47a3b;
     color: #ffffff;
 }
-/* =========================
+
+
+/* =========================================================
    2. DESIGN VARIABLES
-   ========================= */
+   Stores the website's main colours, border radiuses,
+   shadows and transition effects for consistent styling.
+   ========================================================= */
+
 :root {
     --espresso: #24140e;
     --brown: #43261a;
@@ -56,23 +81,36 @@ textarea {
     --white: #ffffff;
     --text: #2b1b14;
     --muted: #786b63;
+
     --radius-small: 12px;
     --radius-medium: 20px;
     --radius-large: 32px;
+
     --shadow-soft: 0 10px 30px rgba(36, 20, 14, 0.08);
     --shadow-large: 0 25px 70px rgba(36, 20, 14, 0.16);
+
     --transition: all 0.3s ease;
 }
-/* =========================
+
+
+/* =========================================================
    3. GENERAL STYLING
-   ========================= */
+   Controls the main content width, section spacing,
+   headings and paragraph appearance.
+   ========================================================= */
+
+/* Centres website content and limits its maximum width */
 .container {
     width: min(1180px, 90%);
     margin: 0 auto;
 }
+
+/* Adds consistent vertical spacing between page sections */
 .section {
     padding: 100px 0;
 }
+
+/* Styles small introductory labels above headings */
 .eyebrow {
     display: inline-block;
     color: var(--caramel);
@@ -82,6 +120,8 @@ textarea {
     text-transform: uppercase;
     margin-bottom: 14px;
 }
+
+/* Sets the font and line spacing for headings */
 h1,
 h2,
 h3,
@@ -89,19 +129,31 @@ h4 {
     font-family: Georgia, "Times New Roman", serif;
     line-height: 1.15;
 }
+
+/* Main second-level heading style */
 h2 {
     font-size: clamp(2.2rem, 5vw, 3.8rem);
     color: var(--espresso);
 }
+
+/* Sets the default paragraph text colour */
 p {
     color: var(--muted);
 }
+
+/* Utility class for centring text */
 .text-center {
     text-align: center;
 }
-/* =========================
-   4. HEADER / NAVIGATION
-   ========================= */
+
+
+/* =========================================================
+   4. HEADER AND NAVIGATION
+   Styles the sticky website header, logo, navigation links
+   and mobile navigation button.
+   ========================================================= */
+
+/* Keeps the header visible while visitors scroll */
 .site-header {
     position: sticky;
     top: 0;
@@ -110,6 +162,8 @@ p {
     backdrop-filter: blur(14px);
     border-bottom: 1px solid rgba(103, 64, 45, 0.1);
 }
+
+/* Hamburger button is hidden on larger screens */
 .menu-toggle {
     display: none;
     width: 48px;
@@ -121,6 +175,8 @@ p {
     cursor: pointer;
     transition: var(--transition);
 }
+
+/* Creates the three lines of the mobile hamburger icon */
 .menu-toggle::before,
 .menu-toggle::after,
 .menu-toggle span {
@@ -133,13 +189,35 @@ p {
     background: var(--espresso);
     transition: var(--transition);
 }
-.menu-toggle::before { top: 15px; }
-.menu-toggle span { top: 22px; }
-.menu-toggle::after { top: 29px; }
-.menu-toggle[aria-expanded="true"]::before { transform: rotate(45deg); top: 22px; }
-.menu-toggle[aria-expanded="true"] span { opacity: 0; }
-.menu-toggle[aria-expanded="true"]::after { transform: rotate(-45deg); top: 22px; }
 
+.menu-toggle::before {
+    top: 15px;
+}
+
+.menu-toggle span {
+    top: 22px;
+}
+
+.menu-toggle::after {
+    top: 29px;
+}
+
+/* Changes the hamburger icon into a close icon when expanded */
+.menu-toggle[aria-expanded="true"]::before {
+    transform: rotate(45deg);
+    top: 22px;
+}
+
+.menu-toggle[aria-expanded="true"] span {
+    opacity: 0;
+}
+
+.menu-toggle[aria-expanded="true"]::after {
+    transform: rotate(-45deg);
+    top: 22px;
+}
+
+/* Arranges the logo and navigation horizontally */
 .nav-container {
     min-height: 82px;
     display: flex;
@@ -147,6 +225,8 @@ p {
     justify-content: space-between;
     gap: 35px;
 }
+
+/* Styles the business logo and name */
 .logo {
     display: flex;
     align-items: center;
@@ -156,6 +236,8 @@ p {
     font-size: 1.4rem;
     font-weight: 900;
 }
+
+/* Makes the logo image circular */
 .logo img {
     width: 62px;
     height: 62px;
@@ -164,17 +246,25 @@ p {
     border: 3px solid var(--cream-dark);
     transition: var(--transition);
 }
+
+/* Adds a small animation when visitors hover over the logo */
 .logo:hover img {
     transform: rotate(-8deg) scale(1.05);
 }
+
+/* Arranges navigation links in a horizontal row */
 .main-nav {
     display: flex;
     align-items: center;
     gap: 5px;
 }
+
+/* Displays the navigation when the mobile menu is opened */
 .main-nav.active {
     display: flex;
 }
+
+/* Styles individual navigation links */
 .main-nav a {
     position: relative;
     padding: 10px 14px;
@@ -184,6 +274,8 @@ p {
     border-radius: 10px;
     transition: var(--transition);
 }
+
+/* Creates an animated underline below navigation links */
 .main-nav a::after {
     content: "";
     position: absolute;
@@ -195,22 +287,33 @@ p {
     transform: translateX(-50%);
     transition: var(--transition);
 }
+
+/* Changes navigation link colour when hovered */
 .main-nav a:hover {
     color: var(--caramel);
 }
+
 .main-nav a:hover::after {
     width: 55%;
 }
+
+/* Adds a visible outline when navigation links receive focus */
 .main-nav a:focus {
     outline: 3px solid var(--gold);
     outline-offset: 3px;
 }
+
+/* Adds a small click effect to navigation links */
 .main-nav a:active {
     transform: scale(0.95);
 }
+
+/* Highlights the current page in the navigation */
 .main-nav .active {
     color: var(--caramel);
 }
+
+/* Styles the enquiry navigation link as a button */
 .main-nav .nav-button {
     background: var(--espresso);
     color: var(--white);
@@ -218,18 +321,26 @@ p {
     margin-left: 8px;
     border-radius: 50px;
 }
+
+/* Removes the underline effect from the enquiry button */
 .main-nav .nav-button::after {
     display: none;
 }
+
 .main-nav .nav-button:hover {
     background: var(--caramel);
     color: var(--white);
     transform: translateY(-2px);
     box-shadow: var(--shadow-soft);
 }
-/* =========================
+
+
+/* =========================================================
    5. BUTTONS
-   ========================= */
+   Provides consistent styling for primary, secondary
+   and other action buttons throughout the website.
+   ========================================================= */
+
 .button {
     display: inline-flex;
     justify-content: center;
@@ -243,35 +354,49 @@ p {
     transition: var(--transition);
     cursor: pointer;
 }
+
+/* Main action button */
 .primary-button {
     background: var(--espresso);
     color: var(--white);
 }
+
 .primary-button:hover {
     background: var(--caramel);
     transform: translateY(-4px);
     box-shadow: 0 12px 25px rgba(200, 117, 60, 0.3);
 }
+
+/* Secondary button with a transparent background */
 .secondary-button {
     background: transparent;
     border-color: var(--coffee);
     color: var(--coffee);
 }
+
 .secondary-button:hover {
     background: var(--coffee);
     color: var(--white);
     transform: translateY(-4px);
 }
+
+/* Makes buttons easier to identify when using a keyboard */
 .button:focus {
     outline: 3px solid var(--gold);
     outline-offset: 4px;
 }
+
 .button:active {
     transform: translateY(1px);
 }
-/* =========================
-   6. HERO SECTION
-   ========================= */
+
+
+/* =========================================================
+   6. HOME PAGE HERO SECTION
+   Styles the main welcome area, introductory text,
+   action buttons and featured business image.
+   ========================================================= */
+
 .hero {
     position: relative;
     min-height: 680px;
@@ -282,6 +407,8 @@ p {
         linear-gradient(135deg, #fffaf5 0%, #f0dfce 100%);
     overflow: hidden;
 }
+
+/* Decorative circle in the hero background */
 .hero::before {
     content: "";
     position: absolute;
@@ -292,6 +419,7 @@ p {
     right: -150px;
     top: -130px;
 }
+
 .hero::after {
     content: "";
     position: absolute;
@@ -302,6 +430,8 @@ p {
     right: -70px;
     top: -50px;
 }
+
+/* Creates a two-column layout for the hero text and image */
 .hero-content {
     position: relative;
     z-index: 2;
@@ -310,9 +440,13 @@ p {
     align-items: center;
     gap: 80px;
 }
+
+/* Applies entrance animation to the hero text */
 .hero-text {
     animation: fadeUp 0.8s ease both;
 }
+
+/* Styles the main welcome heading */
 .hero-text h1 {
     max-width: 650px;
     font-size: clamp(3.5rem, 7vw, 6.3rem);
@@ -320,24 +454,33 @@ p {
     color: var(--espresso);
     margin-bottom: 25px;
 }
+
 .hero-text h1 span {
     color: var(--caramel);
     font-style: italic;
 }
+
+/* Styles the introductory paragraph */
 .hero-text > p:not(.eyebrow) {
     max-width: 560px;
     font-size: 1.1rem;
     margin-bottom: 34px;
 }
+
+/* Arranges the hero action buttons */
 .hero-buttons {
     display: flex;
     flex-wrap: wrap;
     gap: 14px;
 }
+
+/* Styles the featured business image */
 .hero-image {
     position: relative;
     animation: fadeIn 1s ease both;
 }
+
+/* Adds a decorative border behind the image */
 .hero-image::before {
     content: "";
     position: absolute;
@@ -346,6 +489,7 @@ p {
     border-radius: var(--radius-large);
     z-index: -1;
 }
+
 .hero-image img {
     width: 100%;
     height: 500px;
@@ -353,33 +497,51 @@ p {
     border-radius: var(--radius-large);
     box-shadow: var(--shadow-large);
 }
-/* =========================
+
+
+/* =========================================================
    7. SECTION HEADINGS
-   ========================= */
+   Controls the width, spacing and alignment of headings
+   used to introduce different website sections.
+   ========================================================= */
+
 .section-heading {
     max-width: 680px;
     margin-bottom: 55px;
 }
+
+/* Centres section headings when the centre class is used */
 .section-heading.center {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
 }
+
 .section-heading p:last-child {
     margin-top: 10px;
     font-size: 1.05rem;
 }
-/* =========================
-   8. SERVICE CARDS
-   ========================= */
+
+
+/* =========================================================
+   8. HOME PAGE SERVICE CARDS
+   Styles the food and drink category cards displayed
+   on the home page.
+   ========================================================= */
+
+/* Gives the services section a white background */
 .services {
     background: var(--white);
 }
+
+/* Arranges the service cards in four equal columns */
 .card-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 22px;
 }
+
+/* Individual service card appearance */
 .service-card {
     position: relative;
     padding: 35px 28px;
@@ -389,6 +551,8 @@ p {
     overflow: hidden;
     transition: var(--transition);
 }
+
+/* Decorative line that appears when a card is hovered */
 .service-card::before {
     content: "";
     position: absolute;
@@ -401,16 +565,22 @@ p {
     transform-origin: left;
     transition: var(--transition);
 }
+
 .service-card:hover {
     transform: translateY(-10px);
     box-shadow: var(--shadow-soft);
 }
+
 .service-card:hover::before {
     transform: scaleX(1);
 }
+
+/* Highlights cards when an element inside receives focus */
 .service-card:focus-within {
     outline: 3px solid var(--gold);
 }
+
+/* Styles the food and drink icons */
 .card-icon {
     width: 62px;
     height: 62px;
@@ -423,32 +593,45 @@ p {
     margin-bottom: 24px;
     transition: var(--transition);
 }
+
 .service-card:hover .card-icon {
     transform: scale(1.1) rotate(3deg);
 }
+
 .service-card h3 {
     font-size: 1.35rem;
     margin-bottom: 10px;
 }
-/* =========================
-   9. ABOUT SECTION
-   ========================= */
+
+
+/* =========================================================
+   9. ABOUT PREVIEW SECTION
+   Styles the short business introduction and highlighted
+   business value displayed on the home page.
+   ========================================================= */
+
 .about-preview {
     background:
         linear-gradient(135deg, #f3e4d5, #fffaf5);
 }
+
+/* Creates a two-column layout for the introduction and value card */
 .split-section {
     display: grid;
     grid-template-columns: 1.2fr 0.8fr;
     gap: 90px;
     align-items: center;
 }
+
 .split-section > div:first-child {
     max-width: 650px;
 }
+
 .split-section h2 {
     margin-bottom: 22px;
 }
+
+/* Styles the link to the full About page */
 .text-link {
     display: inline-block;
     margin-top: 25px;
@@ -456,14 +639,18 @@ p {
     font-weight: 900;
     transition: var(--transition);
 }
+
 .text-link:hover {
     color: var(--espresso);
     transform: translateX(7px);
 }
+
 .text-link:focus {
     outline: 3px solid var(--gold);
     outline-offset: 4px;
 }
+
+/* Dark highlighted card showing a business value */
 .highlight-box {
     position: relative;
     background: var(--espresso);
@@ -473,6 +660,8 @@ p {
     box-shadow: var(--shadow-large);
     overflow: hidden;
 }
+
+/* Decorative letter in the background of the highlighted card */
 .highlight-box::before {
     content: "M";
     position: absolute;
@@ -483,30 +672,40 @@ p {
     font-weight: 900;
     color: rgba(255,255,255,0.04);
 }
+
 .highlight-box span {
     color: var(--gold);
     font-size: 3.5rem;
     font-weight: 900;
 }
+
 .highlight-box h3 {
     position: relative;
     font-size: 2rem;
     margin: 12px 0;
     color: var(--white);
 }
+
 .highlight-box p {
     position: relative;
     color: #d8cbc3;
 }
-/* =========================
-   10. CTA
-   ========================= */
+
+
+/* =========================================================
+   10. CALL-TO-ACTION SECTION
+   Styles the section encouraging visitors to contact
+   Mush Cafe or make an enquiry.
+   ========================================================= */
+
 .cta-section {
     position: relative;
     background: var(--caramel);
     overflow: hidden;
     padding: 75px 0;
 }
+
+/* Decorative circle in the call-to-action background */
 .cta-section::after {
     content: "";
     position: absolute;
@@ -517,6 +716,8 @@ p {
     right: -100px;
     top: -100px;
 }
+
+/* Arranges the call-to-action text and button */
 .cta-content {
     position: relative;
     z-index: 2;
@@ -525,69 +726,95 @@ p {
     align-items: center;
     gap: 35px;
 }
+
 .cta-section .eyebrow,
 .cta-section h2,
 .cta-section p {
     color: var(--white);
 }
+
 .cta-section h2 {
     margin-bottom: 8px;
 }
+
+/* Light button used against the caramel background */
 .light-button {
     background: var(--white);
     color: var(--espresso);
 }
+
 .light-button:hover {
     background: var(--espresso);
     color: var(--white);
     transform: translateY(-4px);
 }
-/* =========================
-   11. FOOTER
-   ========================= */
+
+
+/* =========================================================
+   11. WEBSITE FOOTER
+   Styles the footer containing the business name,
+   slogan, navigation links and copyright notice.
+   ========================================================= */
+
 .site-footer {
     background: var(--espresso);
     color: var(--white);
     padding-top: 65px;
 }
+
+/* Arranges the footer information and links */
 .footer-content {
     display: flex;
     justify-content: space-between;
     gap: 50px;
     padding-bottom: 45px;
 }
+
 .site-footer h3 {
     color: var(--white);
     font-size: 1.6rem;
     margin-bottom: 8px;
 }
+
 .site-footer p {
     color: #bfb0a7;
 }
+
+/* Displays footer navigation links in a flexible row */
 .footer-links {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     gap: 25px;
 }
+
 .footer-links a {
     color: #ded4ce;
     transition: var(--transition);
 }
+
 .footer-links a:hover {
     color: var(--gold);
 }
+
 .footer-links a:focus {
     outline: 2px solid var(--gold);
     outline-offset: 4px;
 }
+
+/* Separates the copyright notice from the rest of the footer */
 .copyright {
     border-top: 1px solid rgba(255,255,255,0.12);
     padding: 22px 0;
 }
+
+
 /* =========================================================
-   12. PROFESSIONAL INNER PAGE HERO
+   12. INNER PAGE HERO
+   Styles the introductory banner used on pages such as
+   Menu, About, Contact and Enquiry.
    ========================================================= */
+
 .page-hero {
     padding: 85px 0;
     text-align: center;
@@ -595,18 +822,26 @@ p {
         radial-gradient(circle at 50% 0%, rgba(227,161,91,0.25), transparent 35%),
         var(--cream-dark);
 }
+
 .page-hero h1 {
     font-size: clamp(3rem, 6vw, 5rem);
     color: var(--espresso);
     margin-bottom: 15px;
 }
+
 .page-hero p {
     max-width: 650px;
     margin: auto;
 }
+
+
 /* =========================================================
-   13. MENU CARDS
+   13. MENU PAGE
+   Styles the menu search, category filters, sorting controls,
+   food cards and promotional video preview.
    ========================================================= */
+
+/* Hides text visually while keeping it available to screen readers */
 .sr-only {
     position: absolute;
     width: 1px;
@@ -618,6 +853,8 @@ p {
     white-space: nowrap;
     border: 0;
 }
+
+/* Arranges the search, filters and sorting controls */
 .menu-toolbar {
     display: flex;
     flex-wrap: wrap;
@@ -626,9 +863,13 @@ p {
     gap: 18px;
     margin-bottom: 30px;
 }
+
+/* Allows the search field to grow within the toolbar */
 .menu-search {
     flex: 1 1 260px;
 }
+
+/* Styles the menu search input */
 .menu-search input {
     width: 100%;
     border: 2px solid #eadfd6;
@@ -639,17 +880,22 @@ p {
     box-shadow: 0 6px 18px rgba(36, 20, 14, 0.04);
     transition: var(--transition);
 }
+
 .menu-search input:focus {
     outline: none;
     border-color: var(--caramel);
     box-shadow: 0 0 0 4px rgba(200,117,60,0.12);
 }
+
+/* Arranges menu category filter buttons */
 .menu-filters {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     align-items: center;
 }
+
+/* Styles individual category filter buttons */
 .filter-btn {
     border: 1px solid #d9c7b4;
     border-radius: 999px;
@@ -661,6 +907,8 @@ p {
     transition: var(--transition);
     box-shadow: 0 6px 16px rgba(36, 20, 14, 0.04);
 }
+
+/* Hover and keyboard focus appearance for filter buttons */
 .filter-btn:hover,
 .filter-btn:focus-visible {
     background: linear-gradient(180deg, #f7d3af 0%, #eaa35d 100%);
@@ -669,15 +917,21 @@ p {
     transform: translateY(-2px);
     outline: none;
 }
+
+/* Highlights the selected category filter */
 .filter-btn.active {
     background: linear-gradient(180deg, #3d261d 0%, #24140e 100%);
     color: var(--white);
     border-color: var(--espresso);
     box-shadow: 0 10px 18px rgba(36, 20, 14, 0.18);
 }
+
+/* Positions the menu sorting control */
 .menu-sort {
     margin-left: auto;
 }
+
+/* Styles the menu sorting dropdown */
 .menu-sort select {
     min-width: 170px;
     border: 2px solid #eadfd6;
@@ -688,11 +942,14 @@ p {
     transition: var(--transition);
     box-shadow: 0 6px 18px rgba(36, 20, 14, 0.04);
 }
+
 .menu-sort select:focus {
     outline: none;
     border-color: var(--caramel);
     box-shadow: 0 0 0 4px rgba(200,117,60,0.12);
 }
+
+/* Message displayed when no menu items match the search */
 .menu-empty {
     display: none;
     margin-bottom: 24px;
@@ -704,11 +961,15 @@ p {
     font-weight: 700;
     text-align: center;
 }
+
+/* Displays menu cards in two columns */
 .menu-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
 }
+
+/* Individual menu item card */
 .menu-card {
     background: var(--white);
     border: 1px solid #eadfd6;
@@ -717,30 +978,41 @@ p {
     box-shadow: var(--shadow-soft);
     transition: var(--transition);
 }
+
 .menu-card:hover {
     transform: translateY(-8px);
     box-shadow: var(--shadow-large);
 }
+
+/* Contains the menu item image */
 .menu-card-image {
     position: relative;
     overflow: hidden;
 }
+
 .menu-card-image img {
     width: 100%;
     height: 290px;
     object-fit: cover;
     transition: transform 0.5s ease;
 }
+
+/* Adds a zoom effect to menu images when hovered */
 .menu-card:hover .menu-card-image img {
     transform: scale(1.07);
 }
+
+/* Adds spacing around menu item names and descriptions */
 .menu-card-content {
     padding: 28px;
 }
+
 .menu-card-content h2,
 .menu-card-content h3 {
     margin-bottom: 8px;
 }
+
+/* Highlights menu item prices */
 .price {
     display: inline-block;
     color: var(--caramel);
@@ -748,6 +1020,8 @@ p {
     font-weight: 900;
     margin-top: 10px;
 }
+
+/* Styles the promotional video preview container */
 .video-poster {
     position: relative;
     width: min(920px, 100%);
@@ -756,12 +1030,15 @@ p {
     overflow: hidden;
     box-shadow: var(--shadow-large);
 }
+
 .video-poster img {
     display: block;
     width: 100%;
     height: 420px;
     object-fit: cover;
 }
+
+/* Places text over the promotional video image */
 .video-overlay {
     position: absolute;
     inset: 0;
@@ -773,6 +1050,7 @@ p {
     background: rgba(36, 20, 14, 0.45);
     color: var(--white);
 }
+
 .video-overlay span {
     display: inline-block;
     margin-bottom: 10px;
@@ -781,19 +1059,28 @@ p {
     letter-spacing: 0.18em;
     text-transform: uppercase;
 }
+
 .video-overlay p {
     color: var(--white);
     font-size: clamp(1.5rem, 3vw, 2.5rem);
     font-weight: 700;
 }
+
+
 /* =========================================================
-   14. CONTACT / INFORMATION CARDS
+   14. CONTACT PAGE AND INFORMATION CARDS
+   Styles business information cards, video content,
+   contact links and related information.
    ========================================================= */
+
+/* Displays information cards in three columns */
 .info-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 22px;
 }
+
+/* Styles individual business information cards */
 .info-card {
     background: var(--white);
     padding: 32px;
@@ -801,17 +1088,23 @@ p {
     border: 1px solid #eadfd6;
     transition: var(--transition);
 }
+
 .info-card:hover {
     transform: translateY(-7px);
     box-shadow: var(--shadow-soft);
 }
+
 .info-card h3 {
     margin-bottom: 10px;
     color: var(--espresso);
 }
+
+/* Adds a light background to the video section */
 .video-section {
     background: linear-gradient(180deg, #fffaf5 0%, #ffffff 100%);
 }
+
+/* Centres the embedded video and adds rounded corners */
 .video-wrapper {
     width: min(920px, 100%);
     margin: 0 auto;
@@ -819,6 +1112,8 @@ p {
     overflow: hidden;
     box-shadow: var(--shadow-large);
 }
+
+/* Styles the embedded video frame */
 .video-frame {
     display: block;
     width: 100%;
@@ -826,6 +1121,8 @@ p {
     background: #000;
     border: 0;
 }
+
+/* Arranges contact action links in a centred row */
 .contact-links {
     display: flex;
     flex-wrap: wrap;
@@ -833,20 +1130,29 @@ p {
     gap: 16px;
     margin-top: 32px;
 }
+
 .info-card a {
     color: var(--caramel);
     font-weight: 700;
 }
+
 .info-card a:hover {
     color: var(--espresso);
 }
+
 .info-card a:focus {
     outline: 3px solid var(--gold);
     outline-offset: 3px;
 }
+
+
 /* =========================================================
-   15. ENQUIRY FORM
+   15. ENQUIRY AND CONTACT FORMS
+   Styles form containers, labels, input fields, text areas,
+   dropdown lists and submission feedback messages.
    ========================================================= */
+
+/* Centres the enquiry form and creates its white container */
 .enquiry-wrapper {
     max-width: 760px;
     margin: auto;
@@ -855,23 +1161,33 @@ p {
     border-radius: var(--radius-large);
     box-shadow: var(--shadow-large);
 }
+
+/* Arranges form fields vertically with consistent spacing */
 .enquiry-form {
     display: grid;
     gap: 20px;
 }
+
+/* Places related form fields next to each other */
 .form-row {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 18px;
 }
+
+/* Groups each form label and input together */
 .form-group {
     display: grid;
     gap: 8px;
 }
+
+/* Styles form labels */
 .form-group label {
     font-weight: 800;
     color: var(--brown);
 }
+
+/* Shared appearance for text fields, dropdowns and text areas */
 .form-group input,
 .form-group textarea,
 .form-group select,
@@ -886,6 +1202,8 @@ p {
     color: var(--text);
     transition: var(--transition);
 }
+
+/* Highlights form fields when visitors interact with them */
 .form-group input:focus,
 .form-group textarea:focus,
 .form-group select:focus,
@@ -896,11 +1214,15 @@ p {
     border-color: var(--caramel);
     box-shadow: 0 0 0 4px rgba(200,117,60,0.12);
 }
+
+/* Sets the height and resizing behaviour of message fields */
 .form-group textarea,
 .enquiry-form textarea {
     min-height: 160px;
     resize: vertical;
 }
+
+/* Default form feedback message is hidden */
 .form-status {
     display: none;
     margin-top: 18px;
@@ -908,206 +1230,31 @@ p {
     border-radius: 12px;
     font-weight: 700;
 }
+
+/* Displays a success message after successful form validation */
 .form-status.success {
     display: block;
     background: rgba(31, 120, 79, 0.12);
     color: #1d5a3d;
     border: 1px solid rgba(31, 120, 79, 0.25);
 }
+
+/* Displays an error message when form validation fails */
 .form-status.error {
     display: block;
     background: rgba(173, 46, 46, 0.08);
     color: #8f2a2a;
     border: 1px solid rgba(173, 46, 46, 0.2);
 }
-/* =========================
-   17. TABLET BREAKPOINT
-   ========================= */
-@media (max-width: 950px) {
-    .nav-container {
-        flex-direction: column;
-        padding: 18px 0;
-        gap: 12px;
-    }
-    .main-nav {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    .hero {
-        padding: 75px 0;
-    }
-    .hero-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 55px;
-    }
-    .hero-text > p:not(.eyebrow) {
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .hero-buttons {
-        justify-content: center;
-    }
-    .hero-image img {
-        height: 420px;
-    }
-    .card-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .split-section {
-        grid-template-columns: 1fr;
-        gap: 45px;
-    }
-    .info-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .cta-content {
-        flex-direction: column;
-        text-align: center;
-    }
-    .menu-toolbar {
-        flex-direction: column;
-        align-items: stretch;
-    }
-    .menu-sort {
-        margin-left: 0;
-    }
-    .form-row {
-        grid-template-columns: 1fr;
-    }
-}
+
+
 /* =========================================================
-   18. MOBILE BREAKPOINT
+   16. IMAGE LIGHTBOX AND MAP
+   Styles the enlarged image viewer and embedded business
+   location map used on the website.
    ========================================================= */
-@media (max-width: 600px) {
-    body {
-        font-size: 15px;
-    }
-    .container {
-        width: 92%;
-    }
-    .section {
-        padding: 70px 0;
-    }
-    .site-header {
-        position: sticky;
-    }
-    .menu-toggle {
-        display: block;
-    }
-    .main-nav {
-        display: none;
-        width: 100%;
-        flex-direction: column;
-        align-items: stretch;
-        padding: 14px 0 8px;
-        background: rgba(255,255,255,0.95);
-        border-top: 1px solid rgba(103, 64, 45, 0.1);
-    }
-    .main-nav.active {
-        display: flex;
-    }
-    .main-nav a {
-        width: 100%;
-        text-align: center;
-        padding: 12px 16px;
-    }
-    .main-nav .nav-button {
-        margin-left: 0;
-        width: calc(100% - 18px);
-        margin: 0 auto 8px;
-    }
-    .hero {
-        min-height: auto;
-        padding: 65px 0;
-    }
-    .hero-text h1 {
-        font-size: clamp(3rem, 15vw, 4.5rem);
-    }
-    .hero-text > p:not(.eyebrow) {
-        font-size: 1rem;
-    }
-    .hero-buttons {
-        flex-direction: column;
-    }
-    .button {
-        width: 100%;
-    }
-    .hero-image img {
-        height: 300px;
-        border-radius: 22px;
-    }
-    .hero-image::before {
-        inset: -8px 8px 8px -8px;
-    }
-    .card-grid,
-    .menu-grid,
-    .info-grid {
-        grid-template-columns: 1fr;
-    }
-    .service-card {
-        padding: 30px 24px;
-    }
-    .highlight-box {
-        padding: 35px;
-    }
-    .highlight-box span {
-        font-size: 2.8rem;
-    }
-    .footer-content {
-        flex-direction: column;
-    }
-    .footer-links {
-        gap: 15px;
-    }
-    .page-hero {
-        padding: 65px 0;
-    }
-    .page-hero h1 {
-        font-size: clamp(2.7rem, 13vw, 4rem);
-    }
-    .enquiry-wrapper,
-    .content-card {
-        padding: 28px 22px;
-    }
-}
-/* =========================================================
-   19. ANIMATIONS
-   ========================================================= */
-@keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(25px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: scale(0.97);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-/* =========================================================
-   20. ACCESSIBILITY
-   ========================================================= */
-@media (prefers-reduced-motion: reduce) {
-    html {
-        scroll-behavior: auto;
-    }
-    *,
-    *::before,
-    *::after {
-        animation: none !important;
-        transition: none !important;
-    }
-}
+
+/* Full-screen background for enlarged gallery images */
 .lightbox {
     position: fixed;
     top: 0;
@@ -1122,6 +1269,8 @@ p {
     cursor: pointer;
     padding: 20px;
 }
+
+/* Controls the size of the enlarged gallery image */
 .lightbox img {
     max-width: 90%;
     max-height: 85%;
@@ -1129,6 +1278,8 @@ p {
     border-radius: 14px;
     box-shadow: 0 20px 50px rgba(0,0,0,0.3);
 }
+
+/* Styles the button used to close the image viewer */
 .lightbox-close {
     position: absolute;
     top: 22px;
@@ -1143,6 +1294,8 @@ p {
     line-height: 1;
     cursor: pointer;
 }
+
+/* Centres the embedded map and adds rounded corners */
 .map-wrapper {
     width: 100%;
     margin-top: 30px;
@@ -1150,9 +1303,298 @@ p {
     overflow: hidden;
     box-shadow: var(--shadow-soft);
 }
+
+/* Makes the map fill its container */
 .map-frame {
     display: block;
     width: 100%;
     min-height: 320px;
     border: 0;
+}
+
+
+/* =========================================================
+   17. TABLET RESPONSIVE DESIGN
+   Adjusts layouts for medium-sized screens such as tablets.
+   ========================================================= */
+
+@media (max-width: 950px) {
+
+    /* Stacks the header content vertically on tablet screens */
+    .nav-container {
+        flex-direction: column;
+        padding: 18px 0;
+        gap: 12px;
+    }
+
+    /* Allows navigation links to wrap onto additional rows */
+    .main-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    /* Adds spacing around the hero section */
+    .hero {
+        padding: 75px 0;
+    }
+
+    /* Changes the hero layout to one column */
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 55px;
+    }
+
+    .hero-text > p:not(.eyebrow) {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-image img {
+        height: 420px;
+    }
+
+    /* Displays service cards in two columns */
+    .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Stacks the About section content */
+    .split-section {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    /* Reduces the information card layout to two columns */
+    .info-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Stacks the call-to-action text and button */
+    .cta-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /* Stacks menu controls for easier use on tablets */
+    .menu-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .menu-sort {
+        margin-left: 0;
+    }
+
+    /* Places form fields in a single column */
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================================================
+   18. MOBILE RESPONSIVE DESIGN
+   Adjusts navigation, buttons, cards, images and forms
+   for smaller screens such as smartphones.
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    /* Slightly reduces the default text size */
+    body {
+        font-size: 15px;
+    }
+
+    /* Gives mobile content more available screen width */
+    .container {
+        width: 92%;
+    }
+
+    /* Reduces section spacing on smaller screens */
+    .section {
+        padding: 70px 0;
+    }
+
+    .site-header {
+        position: sticky;
+    }
+
+    /* Places the logo and mobile menu button on one row */
+    .nav-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 12px 0;
+        gap: 12px;
+    }
+
+    /* Displays the hamburger button on mobile devices */
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Hides navigation links until the menu is opened */
+    .main-nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 14px 0 8px;
+        background: rgba(255,255,255,0.95);
+        border-top: 1px solid rgba(103, 64, 45, 0.1);
+    }
+
+    /* Displays navigation links when JavaScript adds the active class */
+    .main-nav.active {
+        display: flex;
+    }
+
+    .main-nav a {
+        width: 100%;
+        text-align: center;
+        padding: 12px 16px;
+    }
+
+    /* Makes the enquiry navigation button fit the mobile menu */
+    .main-nav .nav-button {
+        margin-left: 0;
+        width: calc(100% - 18px);
+        margin: 0 auto 8px;
+    }
+
+    /* Reduces the height and spacing of the hero section */
+    .hero {
+        min-height: auto;
+        padding: 65px 0;
+    }
+
+    .hero-text h1 {
+        font-size: clamp(3rem, 15vw, 4.5rem);
+    }
+
+    .hero-text > p:not(.eyebrow) {
+        font-size: 1rem;
+    }
+
+    /* Stacks hero buttons vertically on small screens */
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .button {
+        width: 100%;
+    }
+
+    /* Adjusts the featured image for mobile screens */
+    .hero-image img {
+        height: 300px;
+        border-radius: 22px;
+    }
+
+    .hero-image::before {
+        inset: -8px 8px 8px -8px;
+    }
+
+    /* Changes card layouts to one column */
+    .card-grid,
+    .menu-grid,
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-card {
+        padding: 30px 24px;
+    }
+
+    /* Reduces padding inside the highlighted value card */
+    .highlight-box {
+        padding: 35px;
+    }
+
+    .highlight-box span {
+        font-size: 2.8rem;
+    }
+
+    /* Stacks footer content vertically */
+    .footer-content {
+        flex-direction: column;
+    }
+
+    .footer-links {
+        gap: 15px;
+    }
+
+    /* Reduces the inner page banner spacing */
+    .page-hero {
+        padding: 65px 0;
+    }
+
+    .page-hero h1 {
+        font-size: clamp(2.7rem, 13vw, 4rem);
+    }
+
+    /* Reduces padding inside forms and content cards */
+    .enquiry-wrapper,
+    .content-card {
+        padding: 28px 22px;
+    }
+}
+
+
+/* =========================================================
+   19. WEBSITE ANIMATIONS
+   Defines entrance animations used by selected page
+   elements to create a smoother visual experience.
+   ========================================================= */
+
+/* Moves an element upwards while gradually appearing */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Gradually displays an element while slightly scaling it */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* =========================================================
+   20. ACCESSIBILITY
+   Reduces motion for visitors who prefer fewer animations.
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    /* Disables smooth scrolling when reduced motion is preferred */
+    html {
+        scroll-behavior: auto;
+    }
+
+    /* Removes animations and transitions for accessibility */
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
 }
